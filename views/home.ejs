@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OAuth Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
+    <style>
+    body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+    }
+
+    .bg {
+        /* The image used */
+        background-image: url("http://dragonflyartz.ddns.net/WEBDEV/WEB%20Stuff/WEB%20Stuff/img/img_girl.jpg");
+
+        /* Full height */
+        height: 100%; 
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    nav{
+        background: #ff5353;
+        padding: 20px 10px;
+    }
+    nav ul{
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    nav li{
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 10px 0 0;
+    }
+    nav a{
+        color: #fff;
+        font-size: 18px;
+        background: rgba(255, 255, 255, 0.2);
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+    main,header{
+        max-width: 960px;
+        margin: 30px auto;
+        padding: 0 10px;
+        color: #ff5353;
+    }
+    </style>
+</head>
+<body class="bg">
+
+        <div ></div>
+
+    <nav>
+        <ul>
+            <% if (user) { %>
+            <li><a href="/auth/logout">Logout</a></li>
+            <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <% } %>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>FSWO104-JS</h1>
+        <h2>Welcome to my Blog.</h2>
+    </header>
+    <main>
+        Login to start!!
+    </main>
+</body>
+</html>
