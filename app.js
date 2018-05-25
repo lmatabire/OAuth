@@ -19,6 +19,13 @@ app.use(cookieSession({
     keys:[keys.session.cookieKey]
 }));
 
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// parse requests of content-type - application/json
+app.use(bodyParser.json())
+
+
 // initialize passport
  app.use(passport.initialize());
  app.use(passport.session());
@@ -34,8 +41,14 @@ app.use('/profile', profileRoutes);
 
 // create home route
 app.get('/', (req, res) => {
-    res.render('home', { user: req.user });
+    res.render('home', { 
+        user: req.user, 
+    });
 })
+
+// Require Notes routes
+require('./routes/post.route')(app);
+
 
 app.listen(3000, () => {
     console.log('app now listerning for request on port 3000')

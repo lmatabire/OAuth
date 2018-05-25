@@ -22,7 +22,6 @@ passport.use(
     callbackURL: '/auth/google/redirect'
 }, (accessToken, refreshToken, profile, done) => {
     // check if user already exists in our db
-
     User.findOne({googleId: profile.id}).then((currentUser) => {
         if(currentUser) {
             // already have the user
@@ -36,12 +35,28 @@ passport.use(
                 thumbnail: profile._json.image.url
             }).save().then((newUser) => {
                 console.log('new user created: ' + newUser);
+                
                 done(null, newUser);
             });
         }
     })
-    //passport callback function
-    // console.log('passport callback function fired');
-    // console.log(profile);
+    // Student.findOne({stud_id: Object.id}).then((currentStudent) => {
+    //     if(currentStudent) {
+    //         // already have the user
+    //         console.log('current user is: ', currentStudent);
+    //         done(null, currentStudent);
+    //     } else {
+    //         // if not, create user in our db
+    //         new Student({
+    //             stud_name: profile.displayName,
+    //             stud_id: profile.id,
+    //             online: profile._json.image.url
+    //             campus: 
+    //         }).save().then((newUser) => {
+    //             console.log('new user created: ' + newUser);
+    //             done(null, newUser);
+    //         });
+    //     }
+    // })
 })
 )

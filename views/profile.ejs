@@ -67,15 +67,24 @@ input[type=submit] {
     float: right;
 }
 
+input[type=text] {
+    margin-left: 145px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
 input[type=submit]:hover {
     background-color: #45a049;
 }
 
 .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #e24545;
     padding: 20px;
-    margin: 180px;
+    margin: 84px;
+    margin-left: auto;
 }
 
 .col-25 {
@@ -118,53 +127,26 @@ input[type=submit]:hover {
             </ul>
     </nav>
     <header>
-        <h1>Welcome , <%= user.username %></h1>
+        <h1>Welcome , My name is Professor <%= user.username %></h1>
     </header>
     <main>
         <img src="<%= user.thumbnail %>" alt="chidhori">
-    </main>
-    <h1>Slot Machine App</h1>
-
-    <button onClick="start()">Start</button>
-
-    <h1>Results</h1>
-
-    <img id="output1" height="100" width="100" />
-    <img id="output2" height="100" width="100" />
-    <img id="output3" height="100" width="100" />
-
-
-    <!-- <div class="container">
-            <form action="/profile" method="POST">
-              <div class="row">
-                <div class="col-25">
-                  <label for="fname">First Name</label>
-                </div>
-                <div class="col-75">
-                  <input type="text"  name="firstname" placeholder="Your name..">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-25">
-                  <label for="lname">Last Name</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" name="lastname" placeholder="Your last name..">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-25">
-                  <label for="subject">Email</label>
-                </div>
-                <div class="col-75">
-                  <input type="email" name="email" placeholder="email">
-                </div>
-              </div>
-              <div class="row">
-                <input type="submit" value="Submit">
-              </div>
+        <h1>
+            Enter your name and we will call you shortly
+        </h1>
+        <div class="container">
+            <form action="/posts" method="POST">
+                <input type="text" name="title" placeholder="Enter your name" required />
+                <input type="text" name="content" placeholder="Enter your Major">
+                <input type="submit" value="Enter"/>
             </form>
-          </div> -->
-          <script src="./app.js"></script>
+        </div>
+        <ul>
+        </ul>
+
+    </main>
+
+    
+    
 </body>
 </html>
